@@ -1,5 +1,4 @@
-﻿
-using VirtualDars.Demo.Calc;
+﻿using VirtualDars.Demo.Calc;
 
 Calculator calculator = new Calculator();
 calculator.Start();
