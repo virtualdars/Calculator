@@ -10,7 +10,10 @@
 
                 double firstNumber = ParseNumber();
                 string operation = ValidateOperation();
-                double secondNumber = ParseNumber();
+                double secondNumber = 0;
+
+                if (operation != "#")
+                    secondNumber = ParseNumber();
 
                 double result = Calculate(firstNumber, operation, secondNumber);
                 Console.WriteLine(result);
@@ -29,7 +32,11 @@
                 "#" => Math.Sqrt(firstNumber)
             };
 
-            Console.WriteLine($"Natija: {firstNumber} {operation} {secondNumber} = {result}");
+            if (operation != "#")
+                Console.WriteLine($"Natija: {firstNumber} {operation} {secondNumber} = {result}");
+            else
+                Console.WriteLine($"Natija: √{firstNumber} = {result}");
+
             return result;
         }
 
